@@ -5,7 +5,7 @@
 
         <input
             type="text"
-            placeholder="Hazme una pregunta"
+            placeholder="Hazme una pregunta de si o no"
             v-model="question"
             @keypress.enter="ask"
         >
@@ -36,8 +36,8 @@ export default {
             const { answer, image } = await fetch('https://yesno.wtf/api').then(resp => resp.json())
 
             setTimeout(() => {
-                this.answer = answer === 'yes' ? 'Sí' : 'No!'
                 this.img = image
+                this.answer = answer === 'yes' ? 'Sí' : 'No!'
             }, 2000)
 
         }
